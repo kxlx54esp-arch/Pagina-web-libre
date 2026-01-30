@@ -1,0 +1,95 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    background: #0f0c29;
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    color: white;
+}
+
+/* Reutilizamos estilo de navbar para consistencia */
+.navbar {
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 1rem;
+    text-align: center;
+}
+
+.navbar a {
+    color: #00d2ff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.ticket-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+.ticket-card {
+    background: #fff;
+    color: #333;
+    padding: 30px;
+    border-radius: 20px;
+    width: 320px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.ticket-header h3 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.badge {
+    background: #ff416c;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+
+.price {
+    font-size: 50px;
+    font-weight: 800;
+    margin: 20px 0;
+    color: #1a1a2e;
+}
+
+.features {
+    list-style: none;
+    padding: 0;
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+.features li {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.ticket-select {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+}
+
+.btn-buy {
+    width: 100%;
+    padding: 15px;
+    background: #1a1a2e;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btn-buy:hover {
+    transform: scale(1.05);
+    background: #302b63;
+}

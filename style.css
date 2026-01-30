@@ -1,0 +1,337 @@
+/* --- VARIABLES Y RESET --- */
+:root {
+    --neon-purple: #e81cff;
+    --dark-purple: #69008c;
+    --black-bg: #050505;
+    --gray-card: #111111;
+    --text-color: #ffffff;
+    --font-main: 'Inter', sans-serif;
+    --font-accent: 'Orbitron', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--black-bg);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+}
+
+/* Fondo con textura grunge aplicada a todo el sitio */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('fondo-textura-grunge-oscuro-aranazos-manchas_1048-18915.avif');
+    background-size: cover;
+    opacity: 0.1;
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --- NAVEGACIÓN --- */
+.cabecera {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(232, 28, 255, 0.2);
+    padding: 10px 0;
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.loguito {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 2px solid var(--neon-purple);
+    transition: transform 0.4s ease;
+}
+
+.loguito:hover {
+    transform: scale(1.1) rotate(15deg);
+    box-shadow: 0 0 15px var(--neon-purple);
+}
+
+nav a {
+    text-decoration: none;
+    color: #fff;
+    margin-left: 20px;
+    font-family: var(--font-accent);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--neon-purple);
+}
+
+.presentacion {
+    height: 100vh;
+    background: url('rave party lights  CLICK.gif') center/cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-content h1 {
+    font-family: var(--font-accent);
+    font-size: clamp(2.5rem, 8vw, 5.5rem);
+    letter-spacing: 10px;
+    margin-bottom: 30px;
+    text-shadow: 0 0 20px var(--neon-purple);
+}
+
+.btn-main {
+    background: var(--dark-purple);
+    color: white;
+    border: none;
+    padding: 18px 45px;
+    font-family: var(--font-accent);
+    font-weight: bold;
+    cursor: pointer;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+    transition: 0.3s;
+}
+
+.btn-main:hover {
+    background: #fff;
+    color: #000;
+    transform: scale(1.05);
+}
+
+section {
+    padding: 100px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-family: var(--font-accent);
+    font-size: 2.8rem;
+    color: var(--neon-purple);
+    text-align: center;
+    margin-bottom: 50px;
+    letter-spacing: 5px;
+    text-transform: uppercase;
+}
+
+.nosotros-texto {
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #ccc;
+}
+
+/* --- GRID DE EVENTOS --- */
+.eventos-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.evento {
+    background: var(--gray-card);
+    border-radius: 15px;
+    overflow: hidden;
+    transition: 0.4s;
+    border: 1px solid #222;
+}
+
+.evento:hover {
+    transform: translateY(-10px);
+    border-color: var(--neon-purple);
+}
+
+.evento img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    filter: grayscale(30%);
+    transition: 0.4s;
+}
+
+.evento:hover img {
+    filter: grayscale(0%);
+}
+
+.evento-info {
+    padding: 25px;
+    text-align: center;
+}
+
+.evento-info h3 {
+    font-family: var(--font-accent);
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.btn-tickets {
+    background: transparent;
+    border: 1px solid var(--neon-purple);
+    color: white;
+    padding: 10px 25px;
+    font-family: var(--font-accent);
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-tickets:hover {
+    background: var(--neon-purple);
+    color: black;
+}
+
+/* --- TIENDA --- */
+.producto-destacado {
+    background: var(--gray-card);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 40px;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.producto-destacado img {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+.producto-info {
+    flex: 1;
+    min-width: 300px;
+}
+
+.producto-info h3 {
+    font-family: var(--font-accent);
+    font-size: 2rem;
+    margin-bottom: 15px;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 60px 20px;
+    background: #000;
+    border-top: 1px solid #111;
+    font-family: var(--font-accent);
+    font-size: 0.8rem;
+    color: #555;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 768px) {
+    nav {
+        display: none;
+    }
+
+    /* Ocultar nav simple para móvil */
+    h2 {
+        font-size: 2rem;
+    }
+
+    .producto-destacado {
+        text-align: center;
+    }
+}
+
+/* Contenedor de Contacto */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    padding: 20px;
+}
+
+.form-container {
+    background: white;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 500px;
+}
+
+h2 {
+    margin-top: 0;
+    color: #222;
+}
+
+.group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #555;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.btn-submit {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background 0.3s;
+}
+
+.btn-submit:hover {
+    background-color: #0056b3;
+}
